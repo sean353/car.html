@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>shons car garage:</h1>
+    
+    model:<br>
+    <input id="ymodel">
+    <br>
+    color:<br>
+    <input id="clr">
+    <br>
+    manufactar:<br>
+    <input id="man">
+    <br>
+    licence :<br>
+    <input id="lic">
+    <br>
+    <br>
+    <button onclick="addcars()">add car to garage</button>
+    <br>
+    <br>
+    <button onclick="removecars()">remove car from list</button>
+    <br>
+    <br>
+    <br>
+    licenec plate :<input id="licenceremove">
+    <br>
+    <br>
+    <button onclick="removecarswithlicence()">remove specific car</button> 
+    
+
+   
+
+<script>
+    let cars= []
+
+    function addcars() {
+        cars.push({"model":ymodel.value,"color":clr.value,"manufactar":man.value,"licence":lic.value})
+        console.log(cars);
+    }
+    function removecars() {
+        cars.pop();
+        console.log(cars);
+    }
+    function removecarswithlicence() {
+        for (let i = 0; i < cars.length; i++) {
+          if (  cars[i].licence == licenceremove.value) {
+            cars.splice(i, 1);
+            console.log(cars);
+          }
+            
+        }
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
